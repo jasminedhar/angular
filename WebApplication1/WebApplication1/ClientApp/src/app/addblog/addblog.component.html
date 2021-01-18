@@ -1,0 +1,45 @@
+<!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" #closeBtn class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Title</label>
+            <input name="title" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter title">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <textarea name="description" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        </textarea>
+          </div>
+
+
+
+          <button type="button" class="btn btn-primary">Add</button>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+</div>-->
+  <li class="nav-item" [routerLinkActive]="['link-active']">
+    <a class="nav-link text-dark" [routerLink]="['/blogs']">View Blogs</a>
+  </li>
+<form class="form-signin">
+  <h2 class="form-signin-heading">Add Blogs</h2>
+  <input  name="Id" [(ngModel)]="addBlog.Id" type="hidden" id="inputtitle" class="form-control">
+  <label for="inputEmail" class="sr-only">Title</label>
+  <input name="email" [(ngModel)]="addBlog.Title" id="inputtitle" class="form-control" placeholder="Title" required autofocus>
+  <label for="inputPassword" class="sr-only">Description</label>
+  <input name="password" [(ngModel)]="addBlog.Description"  id="description" class="form-control" placeholder="Description" required>
+  <button class="btn btn-lg btn-primary btn-block" (click)="addPost();" type="button">Add</button>
+</form>

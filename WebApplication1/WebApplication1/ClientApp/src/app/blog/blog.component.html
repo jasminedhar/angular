@@ -1,0 +1,51 @@
+<!--<header class="header clearfix">
+  <nav>
+    <ul class="nav nav-pills float-right">
+      <li class="nav-item">
+        <button type="button" class="btn btn-primary">
+          Home
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
+          Add
+        </button>
+      </li>
+      <li class="nav-item">
+        <button type="button" class="btn btn-link">
+          Logout
+        </button>
+      </li>
+    </ul>
+  </nav>
+  <h3 class="text-muted">Angular Blog App</h3>
+</header>
+
+<main role="main">
+  <app-blog></app-blog>
+</main>
+
+<footer class="footer">
+  <p>&copy; Company 2017</p>
+</footer>-->
+  <div class="list-group">
+    <ul>
+      <li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-dark" [routerLink]="['/addblog']">Add</a>
+      </li>
+    </ul>
+    <div *ngFor="let blog of blogs" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{blog.Title}}</h5>
+        <small></small>
+      </div>
+      <p class="mb-1">{{blog.Description}}</p>
+      <small></small>
+      <span>
+        <button type="button" class="btn btn-link" (click)="deleteblog(blog.Id);"data-toggle="modal" data-target="#exampleModal">Delete</button>
+      </span>
+      <span>
+        <button type="button" class="btn btn-link" (click)="editblog(blog.Id);"data-toggle="modal" data-target="#exampleModal">Edit</button>
+      </span>
+    </div>
+  </div>
